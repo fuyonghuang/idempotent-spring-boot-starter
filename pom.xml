@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.2</version>
+		<version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pig4cloud.plugin</groupId>
@@ -61,11 +61,28 @@
         </dependency>
 
         <!--redisson-->
-        <dependency>
+      <!--  <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson-spring-boot-starter</artifactId>
             <version>${redisson.version}</version>
-        </dependency>
+        </dependency>-->
+		<!--redisson-->
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-boot-starter</artifactId>
+			<version>${redisson.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.redisson</groupId>
+					<artifactId>redisson-spring-data-23</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-data-21</artifactId>
+			<version>${redisson.version}</version>
+		</dependency>
 
         <dependency>
             <groupId>net.dreamlu</groupId>
